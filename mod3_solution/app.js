@@ -36,6 +36,7 @@ function NarrowItDownController(MenuSearchSvc) {
           MenuSearchSvc.getMatchedMenuItems().then(function (result) {
 
              list.found = result.data.menu_items;
+             list.matches = [];
 
              //console.log("list.found",list.found);
              console.log("Search Item: ",list.ctrSearchTerm);
