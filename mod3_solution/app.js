@@ -38,11 +38,15 @@ function NarrowItDownController(MenuSearchSvc) {
              list.found = result.data.menu_items;
              list.matches = [];
 
-             //console.log("list.found",list.found);
+             console.log("list.found",list.found);
              console.log("Search Item: ",list.ctrSearchTerm);
              for(var i=0;i<list.found.length;i++){
                   if( list.found[i].description.indexOf(list.ctrSearchTerm) > -1){
-                      list.matches.push({"name":list.found[i].description});
+                        list.matches.push({
+                        "id": list.found[i].id,
+                        "short": list.found[i].name,
+                        "name": list.found[i].description
+                      });
                       //console.log("Match: ",list.found[i].description);
                   }
              }
